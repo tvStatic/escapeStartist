@@ -1,0 +1,23 @@
+<div *ngIf="stage">
+    <h1>Stage {{index + 1}}/{{total}}</h1>
+    <div class="button-bar">
+        <button *ngIf="index > 0" (click)="onPrevious()">Previous</button>
+        <button *ngIf="index < total - 1" (click)="onNext()">Next</button>
+        <button *ngIf="index > 0" (click)="onMoveUp()">Move Up</button>
+        <button *ngIf="index < total - 1" (click)="onMoveDown()">Move Down</button>
+        <button (click)="onDelete()">Delete</button>
+    </div>
+    <div class="button-bar">
+        <button (click)="playFromHere()">Play from here</button>
+    </div>
+    <div>
+        <label>Screen Text:</label>
+        <textarea [(ngModel)]="stage.screenText" (change)="saveGameState()"></textarea>
+    </div>
+    <div>
+        <label>Exit Code:</label>
+        <input type="text" [(ngModel)]="stage.exitCode" (change)="saveGameState()">
+    </div>
+</div>
+
+

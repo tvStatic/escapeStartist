@@ -1,0 +1,52 @@
+<div class="button-bar">
+  <button (click)="save()">Export</button>
+  <input style="display: none;" type="file" (change)="onFileChanged($event)" accept=".json" #fileInput>
+  <button (click)="fileInput.click()">Import</button>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div>
+      <label>Introduction:</label>
+      <textarea [(ngModel)]="game.introduction"></textarea>
+    </div>
+    <app-stage-list 
+      [stages]="stages" 
+      [selected]="selected" 
+      (stageSelected)="stageSelected($event)"
+      (newStage)="newStage()">
+    </app-stage-list>
+  </div>
+  <div class="col-4">
+    <app-edit-stage 
+      [stage]="selected" 
+      [index]="selectedIndex()" 
+      [total]="totalStages()"
+      (next)="next()"
+      (previous)="previous()"
+      (moveUp)="moveUp()"
+      (moveDown)="moveDown()"
+      (deleteStage)="deleteStage()"
+      (change)="onChange()">
+    </app-edit-stage>
+  </div>
+  <div class="col-4">
+    <app-clue-list
+      *ngIf="selected"
+      [clues]="selected.clues"
+      [selected]="selectedClue"
+      (clueSelected)="clueSelected($event)"
+      (newClue)="newClue()">
+    </app-clue-list>
+    <app-edit-clue
+      [clue]="selectedClue" 
+      [index]="selectedClueIndex()" 
+      [total]="totalClues()"
+      (next)="nextClue()"
+      (previous)="previousClue()"
+      (moveUp)="moveClueUp()"
+      (moveDown)="moveClueDown()"
+      (deleteClue)="deleteClue()"
+      (change)="onChange()">
+    </app-edit-clue>
+  </div>
+</div>

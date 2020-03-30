@@ -1,0 +1,20 @@
+<div *ngIf="clue">
+    <h1>Clue {{index + 1}}/{{total}}</h1>
+    <div class="button-bar">
+        <button *ngIf="index > 0" (click)="onPrevious()">Previous</button>
+        <button *ngIf="index < total - 1" (click)="onNext()">Next</button>
+        <button *ngIf="index > 0" (click)="onMoveUp()">Move Up</button>
+        <button *ngIf="index < total - 1" (click)="onMoveDown()">Move Down</button>
+        <button (click)="onDelete()">Delete</button>
+    </div>
+    <div>
+        <label>Text:</label>
+        <textarea [(ngModel)]="clue.text" (change)="onChange()"></textarea>
+    </div>
+    <div>
+        <label>Location:</label>
+        <input type="text" [(ngModel)]="clue.location" (change)="onChange()">
+    </div>
+</div>
+
+

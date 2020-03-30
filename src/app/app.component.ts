@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'escapeHouse';
+  title = 'escapeHome';
+  collapsed = true;
+
+  getCollapsedClass() {
+    if (this.collapsed) {
+      return "hide";
+    }
+  }
+
+  toggleCollapse() {
+    this.collapsed = !this.collapsed;
+  }
 }

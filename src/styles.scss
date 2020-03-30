@@ -1,1 +1,105 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import "./theme.scss";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    bottom: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    background-color: $background-color;
+    color: $text-color;
+}
+
+button {
+    font: inherit;
+    padding: calc(1px + (4 - 1) * ((100vw - 300px) / (1600 - 300))) calc(6px + (21 - 6) * ((100vw - 300px) / (1600 - 300)));
+}
+
+input, textarea {
+    font: inherit;
+    background-color: $text-input-bg;
+    color: $text-color;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+    float: left;
+    padding: 15px;
+}
+
+.s-only {
+    display: none;
+}
+
+.collapse-icon {
+    margin: 0px 10px;
+    cursor: pointer;
+
+    &::after {
+        content: "\2212";
+    }
+
+    &.collapsed::after {
+        content: "\002B";
+    }
+}
+
+.hide {
+    display: none;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .s-only {
+        display: initial;
+    }
+
+    .s-hide {
+        display: none;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    
+}

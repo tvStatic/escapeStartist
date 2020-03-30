@@ -1,0 +1,17 @@
+<div>
+    <h1><span class="s-only collapse-icon {{expanderIcon()}}" (click)="toggleCollapse()"></span>Stages</h1>
+    <div class="{{stageExpanderClass()}}">
+        <ol>
+            <li 
+            *ngFor="let stage of stages" 
+            class="stage {{getSelectedClass(stage)}}"
+            (click)="onClick(stage)">
+                <span *ngIf="stage.exitCode">[{{stage.exitCode}}] </span>{{stage.screenText}}
+                <ul>
+                    <li *ngFor="let hint of stage.clues" class="hint">{{hint.text}}</li>
+                </ul>
+            </li>
+        </ol>
+        <button (click)="onNew()">New Stage</button>
+    </div>
+</div>

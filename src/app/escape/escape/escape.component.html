@@ -1,0 +1,17 @@
+<!-- TODO - show timer, reset button -->
+<div class="top-nav">
+    <!-- TODO - timer -->
+    <div class="timer">
+        <span>{{getTimer()}}</span>
+        <button class="{{playPauseClass()}}" (click)="pauseResume()"></button>
+    </div>
+    <div class="reset-button"><button (click)="onReset()">Reset</button></div>
+</div>
+<div class="content">
+    <div *ngIf="showIntro()">
+        <app-intro text="{{game.introduction}}" (begin)="onBegin()"></app-intro>
+    </div>
+    <div *ngIf="!showIntro()">
+        <app-escape-stage [stage]="currentStage()" (success)="success()"></app-escape-stage>
+    </div>
+</div>

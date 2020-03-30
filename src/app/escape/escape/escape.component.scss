@@ -1,0 +1,71 @@
+.content {
+    width: 100%;
+
+    // this is a bit of a hack
+    height: calc(100vh - 38px);
+    overflow: hidden;
+
+    font-size: calc(14px + (50 - 14) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+
+    > div {
+        padding: 0 10px;
+        margin: auto;
+        text-align: center;
+        vertical-align: middle;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+}
+
+.timer, .reset-button {
+    font-size: calc(14px + (30 - 14) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+}
+
+.timer {
+    position: fixed;
+    left: 10px;
+    top: 0;
+    line-height: 20px;
+
+    button {
+        vertical-align: baseline;
+        margin-left: 10px;
+        padding: initial;
+        background-color: black;
+    }
+
+    .pause {
+        width: 12px;
+        height: 12px;
+        border-top: 0;
+        border-bottom: 0;
+        border-right: 4px solid #fff;
+        border-left: 4px solid #fff;
+    }
+
+    .play {
+        width: 8px;
+        height: 12px;
+        border-top: 6px solid transparent;
+        border-left: 12px solid white;
+        border-right: 0;
+        border-bottom: 6px solid transparent;
+    }
+}
+
+.reset-button {
+    position: fixed;
+    right: 10px;
+    top: 0;
+
+    button {
+        background-color: black;
+        color: white;
+        border: 0;
+        cursor: pointer;
+    }
+}

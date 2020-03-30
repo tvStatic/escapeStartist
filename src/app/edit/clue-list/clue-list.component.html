@@ -1,0 +1,14 @@
+<div>
+    <h1><span class="s-only collapse-icon {{expanderIcon()}}" (click)="toggleCollapse()"></span>Clues</h1>
+    <div class="{{collapsedClass()}}">
+        <div 
+          *ngFor="let clue of clues" 
+          class="clue-wrap {{selectedClass(clue)}}"
+          (click)="onClick(clue)">
+            <app-clue [clue]="clue"></app-clue>
+        </div>
+        <div>
+            <button (click)="onNew()">New Clue</button>
+        </div>
+    </div>
+</div>
