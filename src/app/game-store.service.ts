@@ -296,8 +296,8 @@ export class GameStoreService {
               text: "The first part of the code is on X's birthday.\nThe second part is on Y's birthday.",
               location: "dining table"
             },
-            {text: "78", location: "calender/1"},
-            {text: "71", location: "calender/2"}
+            {text: "78", location: "calendar/1"},
+            {text: "71", location: "calendar/2"}
           ]
         },
         {
