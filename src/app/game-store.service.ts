@@ -97,6 +97,10 @@ export class GameStoreService {
     return this.activeStage !== undefined;
   }
 
+  public isLastStage() {
+    return this.runningGame && this.activeStage >= this.runningGame.stages.length - 1;
+  }
+
   public getRunningGame() {
     return this.runningGame;
   }
@@ -119,6 +123,12 @@ export class GameStoreService {
       this.saveState();
     }
 
+    if (this.isLastStage()) {
+      this.pause();
+    } else {
+      this.resume();
+    }
+    
     return this.getActiveStage();
   }
 
@@ -143,16 +153,25 @@ export class GameStoreService {
       return;
     }
 
-    const now = new Date();
     if (this.pauseElapsed === undefined) {
       // pause
-      this.pauseElapsed = now.getTime() - this.startTime.getTime();
+      this.pause();
     } else {
       // resume
-      this.startTime = new Date(now.getTime() - this.pauseElapsed);
-      this.pauseElapsed = undefined;
+      this.resume();
     }
+  }
 
+  public pause() {
+    const now = new Date();
+    this.pauseElapsed = now.getTime() - this.startTime.getTime();
+    this.saveState();
+  }
+
+  public resume() {
+    const now = new Date();
+    this.startTime = new Date(now.getTime() - this.pauseElapsed);
+    this.pauseElapsed = undefined;
     this.saveState();
   }
 
