@@ -2,9 +2,9 @@
     <router-outlet></router-outlet>
 </div>
 <div class="bottom-navbar">
-    <a class="{{getCollapsedClass()}}" href="/about">About</a>
+    <a [@openClose]="collapsed ? 'closed' : 'open'" class="{{getCollapsedClass()}}" href="/about">About</a>
     <button class="right" (click)="toggleCollapse()">…</button>
-    <a class="right {{getCollapsedClass()}}" href="/escape">Play</a>
-    <a class="right {{getCollapsedClass()}}" href="/edit">Edit</a>
-    <a class="right {{getCollapsedClass()}}" href="/clues">Clue Sheet</a>
+    <a [@openClose]="collapsed ? 'closed' : 'open'" class="right {{getCollapsedClass()}}" href="/escape">Play</a>
+    <a [@openClose]="collapsed ? 'closed' : 'open'" class="right {{getCollapsedClass()}}" href="/edit">Edit</a>
+    <a [@openClose]="collapsed ? 'closed' : 'open'" class="right {{getCollapsedClass()}}" href="/clues">Clue Sheet</a>
 </div>
