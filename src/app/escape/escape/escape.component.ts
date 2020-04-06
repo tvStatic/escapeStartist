@@ -56,11 +56,11 @@ export class EscapeComponent implements OnInit {
     this.gameStore.pauseResume();
   }
 
-  playPauseClass() {
-    if (!this.gameStore.isPaused()) {
-      return "pause";
+  getTimerClass() {
+    if (this.gameStore.isPaused()) {
+      return "paused";
     } else {
-      return "play";
+      return "playing";
     }
   }
 }

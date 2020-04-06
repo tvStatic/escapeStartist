@@ -1,3 +1,5 @@
+@import "src/theme.scss";
+
 .content {
     width: 100%;
 
@@ -25,35 +27,30 @@
     line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
 }
 
+.timer, .reset-button button {
+    vertical-align: baseline;
+    margin-left: 10px;
+    padding: 10px !important;
+    background-color: black;
+    color: white;
+    border: 0;
+    cursor: pointer;
+
+    &:hover {
+        background-color: lighten($color: black, $amount: 10);
+    }
+}
+
 .timer {
     position: fixed;
     left: 10px;
     top: 0;
-    line-height: 20px;
+    
+    padding: 10px !important;
 
-    button {
-        vertical-align: baseline;
-        margin-left: 10px;
-        padding: initial;
-        background-color: black;
-    }
-
-    .pause {
-        width: 12px;
-        height: 12px;
-        border-top: 0;
-        border-bottom: 0;
-        border-right: 4px solid #fff;
-        border-left: 4px solid #fff;
-    }
-
-    .play {
-        width: 8px;
-        height: 12px;
-        border-top: 6px solid transparent;
-        border-left: 12px solid white;
-        border-right: 0;
-        border-bottom: 6px solid transparent;
+    &.paused {
+        font-style: italic;
+        color: darken($color: $text-color, $amount: 20);
     }
 }
 
@@ -61,11 +58,8 @@
     position: fixed;
     right: 10px;
     top: 0;
-
+    
     button {
-        background-color: black;
-        color: white;
-        border: 0;
-        cursor: pointer;
+        font-size: inherit;
     }
 }

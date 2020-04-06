@@ -1,3 +1,17 @@
+input, button {
+    height: calc(1.5em + .75rem + 2px);
+    vertical-align: baseline;
+}
+
 input {
     margin-right: 10px;
+    border-radius: .25rem;
+    border: 1px solid #ccd4da;
+    padding: .375rem .75rem;
+}
+
+button {
+    font-size: inherit;
+    line-height: inherit;
+    padding: calc(1px + (4 - 1) * ((100vw - 300px) / (1600 - 300))) calc(6px + (21 - 6) * ((100vw - 300px) / (1600 - 300)));
 }

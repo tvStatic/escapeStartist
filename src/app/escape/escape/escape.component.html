@@ -1,9 +1,8 @@
 <!-- TODO - show timer, reset button -->
 <div class="top-nav">
     <!-- TODO - timer -->
-    <div class="timer">
+    <div class="timer {{getTimerClass()}}" (click)="pauseResume()">
         <span>{{getTimer()}}</span>
-        <button class="{{playPauseClass()}}" (click)="pauseResume()"></button>
     </div>
     <div class="reset-button"><button (click)="onReset()">Reset</button></div>
 </div>

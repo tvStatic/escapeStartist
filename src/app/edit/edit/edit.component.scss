@@ -1,6 +1,10 @@
 .button-bar {
     text-align: center;
     margin-bottom: 10px;
+
+    button {
+        margin-right: 5px;
+    }
 }
 
 input, textarea {
