@@ -169,6 +169,10 @@ export class GameStoreService {
   }
 
   public resume() {
+    if (!this.isPaused()) {
+      return;
+    }
+    
     const now = new Date();
     this.startTime = new Date(now.getTime() - this.pauseElapsed);
     this.pauseElapsed = undefined;
