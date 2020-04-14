@@ -8,7 +8,7 @@ export class Clue {
 export class Stage {
     public exitCode? : string;
     public screenText: string;
-    public clues: Clue[];
+    public clues: Clue[] = [];
 
     public incorrectText? : string;
 
