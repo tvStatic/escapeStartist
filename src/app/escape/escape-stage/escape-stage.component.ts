@@ -13,19 +13,20 @@ import { Stage } from 'src/app/core/game';
   templateUrl: './escape-stage.component.html',
   styleUrls: ['./escape-stage.component.scss'],
   animations: [
+    trigger("fade", [
+      transition(":enter", [
+        style({opacity: 0}),
+        animate(1000)
+      ]),
+      transition(':leave', [
+        animate(1000, style({opacity: 0}))
+      ])
+    ]),
     trigger("fadeIn", [
-      state('in', style({opacity: 1})),
-
       transition(":enter", [
         style({opacity: 0}),
         animate(1000)
       ])
-    ]),
-    trigger("fadeOut", [
-      state('in', style({opacity: 1})),
-
-      transition(':leave',
-        animate(1000, style({opacity: 0})))
     ]),
   ]
 })
@@ -33,6 +34,7 @@ export class EscapeStageComponent implements OnInit {
   @Input() stage: Stage;
   @Output() success = new EventEmitter();
 
+  show: boolean;
   code: string;
   enterCodeClicked: boolean;
   incorrectCode: boolean;
@@ -40,6 +42,13 @@ export class EscapeStageComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    this.show = true;
+  }
+
+  ngOnChanges(): void {
+    setTimeout(() => {
+      this.show = true;
+    }, 1000);
   }
 
   showEnterCodeButton() {
@@ -72,6 +81,7 @@ export class EscapeStageComponent implements OnInit {
     if (!this.incorrectCode) {
       this.enterCodeClicked = false;
       this.code = "";
+      this.show = false;
       this.success.emit();
     }
   }

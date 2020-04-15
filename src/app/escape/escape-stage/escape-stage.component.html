@@ -1,12 +1,16 @@
-<p [@fadeIn]="'in'">{{stage.screenText}}</p>
-<button *ngIf="showEnterCodeButton()" (click)="onEnterCodeClicked()" [@fadeIn]="'in'">Enter Code</button>
-<input
-  [@fadeIn]="'in'"
-  *ngIf="showCodeInput()"
-  type="text" 
-  name="name"
-  [(ngModel)]="code"
-  (keyup)="onCodeChange()"
-  autocomplete="off"/>
-<button [@fadeIn]="'in'" *ngIf="showCodeInput()" (click)="submit()">Submit</button>
-<p [@fadeIn]="'in'" *ngIf="showIncorrectText()" class="fade-in">{{incorrectText()}}</p>
+<div *ngIf="show" @fade>
+  <p class="text">{{stage.screenText}}</p>
+  <button *ngIf="showEnterCodeButton()" (click)="onEnterCodeClicked()" @fadeIn>Enter Code</button>
+  <form @fadeIn *ngIf="showCodeInput()" (ngSubmit)="submit()">
+    <input
+      *ngIf="showCodeInput()"
+      type="text" 
+      name="name"
+      [(ngModel)]="code"
+      (ngModelChange)="onCodeChange()"
+      autocomplete="off"/>
+    <button type="submit">Submit</button>
+    <p class="incorrect" @fadeIn *ngIf="showIncorrectText()">{{incorrectText()}}</p>
+  </form>
+</div>
+

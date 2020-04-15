@@ -16,6 +16,12 @@ button {
     padding: calc(1px + (4 - 1) * ((100vw - 300px) / (1600 - 300))) calc(6px + (21 - 6) * ((100vw - 300px) / (1600 - 300)));
 }
 
-p {
+p.text {
     white-space: pre-wrap;
+}
+
+p.incorrect {
+    color: red;
+    font-size: 0.7em;
+    margin: 0;
 }
