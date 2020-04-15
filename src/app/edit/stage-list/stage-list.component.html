@@ -6,7 +6,7 @@
             *ngFor="let stage of stages" 
             class="stage {{getSelectedClass(stage)}}"
             (click)="onClick(stage)">
-                <span *ngIf="stage.exitCode">[{{stage.exitCode}}] </span>{{stage.screenText}}
+                <p><span *ngIf="stage.exitCode">[{{stage.exitCode}}] </span>{{stage.screenText}}</p>
                 <ul>
                     <li *ngFor="let hint of stage.clues" class="hint">{{hint.text}}</li>
                 </ul>
