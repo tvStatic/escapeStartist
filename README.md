@@ -1,14 +1,18 @@
 # Escape Startist
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.1.
+Escape Startist is your DIY home escape room. Escape Startist runs completely within your browser, using only data stored in your web browser.
+
+An Escape Startist game consists of multiple stages, each with its own exit code, some screen text, and optionally some clues that can be printed out and placed around your home (or whereever you choose to play your escape room experience). 
+
+Games can be created and edited using the game editor interface. Games can be exported and saved to json files, and likewise can be imported from those files.
+
+Clues can be printed from the Clue Sheet page. Each clue includes the location where it is to be hidden.
+
+This project was created with Angular.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
@@ -22,6 +26,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
