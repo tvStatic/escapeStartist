@@ -2,7 +2,10 @@
     <router-outlet></router-outlet>
 </div>
 <div class="bottom-navbar">
-    <a [@openClose]="collapsed ? 'closed' : 'open'" class="{{getCollapsedClass()}}" href="/about">About</a>
+    <a href="/about">
+        <img class="s-hide" src="assets/escapeStartistLogo-white.svg" alt="Escape Startist Logo">
+        <span class="s-only">About</span>
+    </a>
     <button class="right" (click)="toggleCollapse()">…</button>
     <a [@openClose]="collapsed ? 'closed' : 'open'" class="right {{getCollapsedClass()}}" href="/escape">Play</a>
     <a [@openClose]="collapsed ? 'closed' : 'open'" class="right {{getCollapsedClass()}}" href="/edit">Edit</a>

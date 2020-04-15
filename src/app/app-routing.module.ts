@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'escape', component: EscapeComponent },
   { path: 'clues', component: ClueSheetComponent },
   { path: 'edit', component: EditComponent },
-  { path: 'about', component: AboutComponent }
+  { path: 'about', component: AboutComponent },
+  { path: '', redirectTo: '/about', pathMatch: 'full' }
 ];
 
 @NgModule({

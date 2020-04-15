@@ -35,6 +35,11 @@
         &:hover {
             background-color: lighten($color: black, $amount: 10);
         }
+
+        img {
+            height: 38px;
+            padding-bottom: 10px;
+        }
     }
 
     button:hover, a:hover {

@@ -1,5 +1,38 @@
-div {
-    max-width: 600px;
+div.main {
+    max-width: 1024px;
     margin: 0 auto;
     padding: 10px;
+
+    img {
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    div.intro {
+        padding: 10px;
+
+        a, a:visited {
+            color: white;
+            font-weight: 500;
+            text-decoration: none;
+        }
+    }
+}
+
+.ribbon {
+    position: absolute;
+    right: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    div.main {
+        max-width: 600px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .ribbon {
+        display: none;
+    }
 }
