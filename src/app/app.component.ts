@@ -29,7 +29,7 @@ import {
   ]
 })
 export class AppComponent {
-  title = 'escapeHome';
+  title = 'escapeStartist';
   collapsed = true;
 
   getCollapsedClass() {
