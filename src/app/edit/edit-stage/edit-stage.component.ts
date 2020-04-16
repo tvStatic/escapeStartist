@@ -45,7 +45,7 @@ export class EditStageComponent implements OnInit {
 
   playFromHere() {
     this.gameStore.setActiveStage(this.stage);
-    this.router.navigate(["/escape"]);
+    this.router.navigate(["escape"]);
   }
 
   saveGameState() {

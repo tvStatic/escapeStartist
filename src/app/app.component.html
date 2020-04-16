@@ -2,12 +2,12 @@
     <router-outlet></router-outlet>
 </div>
 <div class="bottom-navbar">
-    <a href="/about">
+    <a href="about">
         <img class="s-hide" src="assets/escapeStartistLogo-white.svg" alt="Escape Startist Logo">
         <span class="s-only">About</span>
     </a>
     <button class="right" (click)="toggleCollapse()">…</button>
-    <a [@openClose]="collapsed ? 'closed' : 'open'" class="right {{getCollapsedClass()}}" href="/escape">Play</a>
-    <a [@openClose]="collapsed ? 'closed' : 'open'" class="right {{getCollapsedClass()}}" href="/edit">Edit</a>
-    <a [@openClose]="collapsed ? 'closed' : 'open'" class="right {{getCollapsedClass()}}" href="/clues">Clue Sheet</a>
+    <a [@openClose]="collapsed ? 'closed' : 'open'" class="right {{getCollapsedClass()}}" href="escape">Play</a>
+    <a [@openClose]="collapsed ? 'closed' : 'open'" class="right {{getCollapsedClass()}}" href="edit">Edit</a>
+    <a [@openClose]="collapsed ? 'closed' : 'open'" class="right {{getCollapsedClass()}}" href="clues">Clue Sheet</a>
 </div>

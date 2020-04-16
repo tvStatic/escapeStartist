@@ -16,7 +16,17 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. 
+
+## Building for GitHub pages
+
+Run `ng build --prod --output-path dist --base-href /escapeStartist/`.
+
+Checkout the `gh-pages` branch into another directory. Copy the files generated in the `dist` directory to this directory. 
+
+Copy `index.html` to `404.html`.
+
+Commit and push the changes to the `gh-pages` branch.
 
 ## Running unit tests
 
