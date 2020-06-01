@@ -1,4 +1,6 @@
-# Escape Startist
+# [Escape Startist](https://tvstatic.github.io/escapeStartist/)
+
+**Escape Startist can be accessed at the link above!**
 
 Escape Startist is your DIY home escape room. Escape Startist runs completely within your browser, using only data stored in your web browser.
 
